@@ -66,7 +66,7 @@ names(df_2)<-gsub("Mag", "Magnitude", names(df_2))
 names(df_2)<-gsub("Gyro", "Gyroscope", names(df_2))
 names(df_2)<-gsub("Acc", "Accelerometer", names(df_2))
 
-## rename ccode for activity
+Rename ccode for activity
 df_2 <- df_2 %>% 
   rename("activity" = "ccode")
 names(df_2)
