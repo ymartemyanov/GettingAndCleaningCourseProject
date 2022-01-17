@@ -55,9 +55,9 @@ df_2$ccode
 
 names(df_2)
 
-## f means Frequency, while t - Time.
-## Acc means Accelerometer, Mag stays for Magnitude, Gyro means Gyroscope, 
-## whilst for BodyBody we can leave just Body without duplicate.
+f means Frequency, while t - Time.
+Acc means Accelerometer, Mag stays for Magnitude, Gyro means Gyroscope, 
+whilst for BodyBody we can leave just Body without duplicate.
 
 names(df_2)<-gsub("^t", "Time", names(df_2))
 names(df_2)<-gsub("^f", "Frequency", names(df_2))
@@ -74,7 +74,7 @@ names(df_2)
 ## 5. From the previous step, create a second, independent tidy data set 
 ## with the average of each variable for each activity and each subject.
 
-#subj as factor 
+subj as factor 
 df_2$subj <- as.factor(df_2$subj)
 df_2 <- data.table(df_2)
 
