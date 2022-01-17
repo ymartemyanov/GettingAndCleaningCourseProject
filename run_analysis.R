@@ -1,5 +1,3 @@
-# GettingAndCleaningCourseProject
-
 pacman::p_load(dplyr, data.table)
 fname <- "week4_course_project.zip"
 if (!file.exists(fname)){
@@ -19,7 +17,8 @@ act_labels <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("c
 subj_test <- read.table("UCI HAR Dataset/test/subject_test.txt", col.names = "subj")
 
 x_test <- read.table("UCI HAR Dataset/test/X_test.txt")
-features1 <- read.table("UCI HAR Dataset/features.txt")[,2]
+features1 <- features[,2]
+
 names(x_test) = features1
 y_test <- read.table("UCI HAR Dataset/test/y_test.txt", col.names = "ccode")
 subj_train <- read.table("UCI HAR Dataset/train/subject_train.txt", col.names = "subj")
@@ -83,3 +82,9 @@ df_4 <- group_by(df_2, activity, subj)
 df_4 <- summarise_all(df_4, funs(mean))
 write.table(df_4, "ind_tidy_dataset_fin.txt", row.name=FALSE)
 
+## Make Codebook
+
+library(codebook)
+new_codebook_rmd()
+library(knitr)
+rmarkdown::render()
