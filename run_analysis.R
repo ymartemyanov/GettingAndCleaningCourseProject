@@ -1,4 +1,5 @@
 pacman::p_load(dplyr, data.table)
+
 fname <- "week4_course_project.zip"
 if (!file.exists(fname)){
   f_URL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
@@ -80,7 +81,7 @@ df_2 <- data.table(df_2)
 
 df_4 <- group_by(df_2, activity, subj)
 df_4 <- summarise_all(df_4, funs(mean))
-write.table(df_4, "ind_tidy_dataset_fin.txt", row.name=FALSE)
+write.table(df_4, "final_tidy_dataset.txt", row.name=FALSE)
 
 ## Make Codebook
 

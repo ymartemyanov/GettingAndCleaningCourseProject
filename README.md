@@ -1,6 +1,5 @@
 # GettingAndCleaningCourseProject
 
-
 pacman::p_load(dplyr, data.table)
 fname <- "week4_course_project.zip"
 if (!file.exists(fname)){
