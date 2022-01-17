@@ -85,6 +85,7 @@ write.table(df_4, "ind_tidy_dataset_fin.txt", row.name=FALSE)
 ## Make Codebook
 
 library(codebook)
-new_codebook_rmd()
+#new_codebook_rmd()
+
 library(knitr)
 rmarkdown::render()
